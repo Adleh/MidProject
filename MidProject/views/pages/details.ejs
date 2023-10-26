@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); -%>
+</head>
+<body>
+    <style>
+        span{
+            color: rgba(0, 0, 0, 0.606);
+            font-size: 12px;
+        }
+        h2{
+            text-transform: lowercase;
+        }
+        h2:first-letter {
+            text-transform: uppercase;
+        }
+        div.btns{
+            padding-top: 20px;
+            width: 70%; margin: auto;
+        }
+        footer{
+            text-align: center;
+            padding-top: 30px;
+        }
+    </style>
+
+    <header><%- include('../partials/blogHeader.ejs'); -%></header>
+
+    <div style="padding: 50px;">
+        <h2><%= blog.title%></h2>
+        <span>Created by<%= blog.userName%>,  Modified at <%= blog.modifiedAt%></span>
+        <p style="text-align: justify;"><%= blog.text%></p>
+        
+        <div class="btns">
+            <a href="/updateBlog?id=<%=blog._id %>"><button>UPDATE</button></a> 
+            <a href="/delete/<%= blog._id%>"><button>DELETE</button></a>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <%- include('../partials/footer.ejs'); -%>
+</footer>
+</html>

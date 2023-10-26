@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); -%>
+</head>
+<body>
+    <header><%- include('../partials/header.ejs'); -%></header>
+
+    <div class="gridContainer">
+
+        <% if(allBlogs.length>0){
+            allBlogs.forEach(allBlogs =>{%>
+                <a href="/blog/<%= allBlogs._id%>">
+                    <div class="blog">
+                        <h3><%= allBlogs.title%></h3>
+                        <p><%= allBlogs.text%></p>
+                        <span>Created by<%= allBlogs.userName%>,  Modified at <%= allBlogs.modifiedAt%></span>
+                    </div>
+                </a>
+            <%})
+        }%>
+    </div>
+</body>
+<%- include('../partials/head.ejs'); -%>
+</html>

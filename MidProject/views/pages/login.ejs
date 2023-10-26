@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); -%>
+</head>
+<body class="loginBody">
+    <header><%- include('../partials/header.ejs'); -%></header>
+
+    <div class="loginSide">
+        
+
+        
+        <form method="Post">
+            
+            <label>Username:</label> &nbsp;
+            <input id="username" type="text" name="username"><br>
+            <br><br>
+      
+            <label>Password:</label>&nbsp;
+            <input id="password" type="text" name="password"><br><br>
+
+            <input type="submit" value="Login">
+
+            <br>
+            <div class="validationMsg">
+                <%if (typeof(errors) != 'undefined'){
+                    for(var err of errors){
+                    %>
+                    <p><%=err.msg %></p>
+            
+                    <%}
+                }%> 
+                <%if (typeof(errorStr) != 'undefined'){ %>
+                    <p><%=errorStr%></p>
+                <%}%>
+            </div>
+            
+        </form>  
+    </div>
+</body>
+<%- include('../partials/head.ejs'); -%>
+</html>

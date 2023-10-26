@@ -1,0 +1,22 @@
+<div class="header">
+    <a href="/">BLOG.IT</a>
+    <nav>
+    
+        
+    <%if (typeof(userDt) != 'undefined'){
+        if(userDt.loggedIn){%>
+            <a href="#">WELCOME, &nbsp;<%=userDt.userName.toUpperCase()%></a>
+            <a href="/createBlog">NEW BLOG</a>
+            <a href="/allBlogs">VIEW BLOGS</a>
+            <a href="/logout">LOGOUT</a>
+        <%}else{%>
+                <a href="/">HOME</a>
+                <a href="/login">LOGIN</a>
+        <%}%>
+        
+    <%} else{%>
+        <a href="/">HOME</a>
+        <a href="/login">LOGIN</a>
+    <%}%>
+    </nav>
+</div>
